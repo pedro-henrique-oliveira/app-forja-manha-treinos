@@ -1,62 +1,328 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    scroll-behavior: smooth;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: white;
+body {
+  background-color: #fff8f0;
+  color: #222;
+  overflow-x: hidden;
+}
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #b31a1a, #d91f26);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  animation: fromNav 1s ease-in-out;
+}
+
+@keyframes fromNav {
+  0% {
+    transform: translateY(-80px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.wrap-img {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.wrap-links {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.wrap-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.wrap-links a:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+/* ---------- SEÇÃO 1: HOME ---------- */
+#s1 {
+  min-height: 100vh;
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  background: linear-gradient(180deg, #fff8f0, #ffefe0);
+}
+
+.left {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fromLeft 1.5s ease-in-out;
+}
+
+@keyframes fromLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.right {
+  width: 350px;
+  animation: fromRight 1.5s ease-in-out;
+}
+
+@keyframes fromRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.wrap-banner {
+  border-radius: 999px;
+  overflow: hidden;
+  width: 400px;
+}
+
+.wrap-banner img {
+  width: 400px;
+  filter: grayscale(40%);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.wrap-banner img:hover {
+  filter: grayscale(0);
+  transform: scale(1.08);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.right h1 {
+  font-size: 48px;
+  color: #d91f26;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.right p {
+  font-size: 18px;
+  color: #333;
+}
+
+#s2 {
+  min-height: 100vh;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff4e6;
+  gap: 5vh;
+}
+
+.wrap-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+}
+
+.card {
+  background-color: #fff8f0;
+  width: 240px;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid #ffcc00;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+}
+
+.card img {
+  width: 200px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 20px;
+  color: #d91f26;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+}
+
+#s3 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  background: #fff8f0;
+}
+
+.wrap-video iframe {
+  width: 100vw;
+  height: 90vh;
+  box-shadow: 0 5px 25px #fff8f0;
+}
+
+#s4 {
+  min-height: 100vh;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fff4e6, #fff8f0);
+  color: #333;
+}
+
+#s4 .card {
+  background-color: #fff8f0;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  padding: 32px;
+  border: 2px solid #ffcc00;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  max-height: 520px;
+}
+
+#s4 .card.expandido {
+  max-height: 900px;
+}
+
+#s4 .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #d91f26, #ffcc00);
+}
+
+#s4 .card h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #d91f26;
+  margin-bottom: 16px;
+}
+
+#s4 .card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+
+#s4 .btn-mc {
+  background-color: #d91f26;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 15px;
+}
+
+#s4 .btn-mc:hover {
+  background-color: #b31a1a;
+  transform: translateY(-3px);
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.6s ease;
+}
+
+.card.expandido .extra-text {
+  opacity: 1;
+  height: auto;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  #s1 {
+    flex-direction: column;
+    padding: 100px 20px;
+  }
+
+  .left, .right {
     width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.475);
-}
+    text-align: center;
+  }
 
-.wrap-img{
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+  .wrap-banner img {
+    width: 250px;
+  }
 
-.wrap-links{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.logo{
-    width: 70px;
-    height: 70px;
-}
-
-#s1{
-    background-color: red;
-    min-height: 100vh;
-}
-
-#s2{
-    background-color: blue;
-    min-height: 100vh
-}
-
-#s3{
-    background-color: green;
-    min-height: 100vh
-}
-
-#s4{
-    background-color: yellow;
-    min-height: 100vh
+  .wrap-video iframe {
+    width: 95%;
+    height: 50vh;
+  }
 }
